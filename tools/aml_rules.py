@@ -1,8 +1,8 @@
-import pandas as pd
+from config.settings import AML_RULES, RISK_HIGH, RISK_MEDIUM
 
 
 def check_high_value(transaction):
-    return transaction["amount"] >= 100000
+    return transaction["amount"] >= AML_RULES["high_value_transaction"]
 
 
 def check_rapid_transactions(transaction, customer_transactions):
@@ -12,7 +12,7 @@ def check_rapid_transactions(transaction, customer_transactions):
             == transaction["transaction_date"]
         ]
     )
-    return same_day_count >= 3
+    return same_day_count >= AML_RULES["rapid_transactions"]
 
 
 def check_unusual_amount(transaction, customer_transactions):
@@ -31,7 +31,8 @@ def check_unusual_amount(transaction, customer_transactions):
 
     return (
         customer_average > 0
-        and transaction["amount"] >= customer_average * 3
+        and transaction["amount"]
+        >= customer_average * AML_RULES["unusual_amount_multiplier"]
     )
 
 
@@ -45,16 +46,10 @@ def analyze_transaction(transaction, customer_transactions):
     if check_high_value(transaction):
         flags.append("High Value Transaction")
 
-    if check_rapid_transactions(
-        transaction,
-        customer_transactions
-    ):
+    if check_rapid_transactions(transaction, customer_transactions):
         flags.append("Rapid Transaction Pattern")
 
-    if check_unusual_amount(
-        transaction,
-        customer_transactions
-    ):
+    if check_unusual_amount(transaction, customer_transactions):
         flags.append("Unusual Transaction Amount")
 
     if check_international_transaction(transaction):
@@ -82,9 +77,9 @@ def calculate_risk_score(flags):
 
 
 def get_risk_level(score):
-    if score >= 70:
+    if score >= RISK_HIGH:
         return "High"
-    elif score >= 40:
+    elif score >= RISK_MEDIUM:
         return "Medium"
     else:
         return "Low"
