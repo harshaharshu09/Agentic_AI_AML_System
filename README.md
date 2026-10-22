@@ -2,6 +2,10 @@
 
 A Python and Streamlit project that demonstrates rule-based transaction monitoring, suspicious-pattern flagging, and risk categorisation for sample financial transactions.
 
+## Live Demo
+
+**Streamlit Application:** Deployment pending. The public app link will be added here after deployment.
+
 ## Overview
 
 The system reads a sample transaction dataset, checks each transaction against configurable rules, assigns a risk score, and displays the results in an interactive dashboard. It is intended as a learning prototype for understanding basic AML transaction-monitoring concepts.
