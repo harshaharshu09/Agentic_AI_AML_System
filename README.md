@@ -8,7 +8,7 @@ A Python and Streamlit learning project that demonstrates rule-based transaction
 
 ## Overview
 
-The system reads a sample transaction dataset, checks each transaction against configurable rules, assigns a risk score, and displays the results in an interactive dashboard. It is intended as a learning prototype for understanding basic AML transaction-monitoring concepts.
+The system reads a sample transaction dataset, checks each transaction against configured rule thresholds, assigns a demonstration risk score, and displays the results in an interactive dashboard. It is intended as a learning prototype for understanding basic AML transaction-monitoring concepts.
 
 ## Workflow
 
@@ -163,8 +163,7 @@ The sample dataset is synthetic. Results depend on the rules and thresholds impl
 
 ## Future Improvements
 
-- Add transaction filtering and search
-- Add risk-distribution charts and customer-level summaries
+- Add customer-level summaries and trend analysis
 - Expand unit tests for additional transaction scenarios and risk-score boundaries
 - Improve time-window and customer-baseline analysis
 - Add a case-review queue and audit trail
