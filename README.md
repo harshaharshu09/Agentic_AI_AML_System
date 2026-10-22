@@ -134,7 +134,7 @@ python -m streamlit run app.py
 The dashboard displays:
 
 - **Total Transactions:** Number of rows screened from the CSV file
-- **Suspicious Transactions:** Transactions with a non-zero rule-based risk score
+- **Suspicious Transactions:** Transactions classified as Medium or High risk by the workflow
 - **High Risk Transactions:** Transactions whose score reaches the configured High-risk band
 - **Transaction Risk Analysis:** The score, risk level, and rule flags for each transaction
 
