@@ -26,7 +26,7 @@ with col1:
 with col2:
     st.metric(
         "Suspicious Transactions",
-        len(transactions[transactions["risk_score"] > 0])
+        len(result["suspicious_transactions"])
     )
 
 with col3:
