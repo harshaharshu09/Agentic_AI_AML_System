@@ -57,29 +57,28 @@ Sample Transaction Dataset (CSV)
 
 ```text
 Agentic_AI_AML_System/
-|
-+-- agents/
-|   +-- __init__.py
-|   +-- aml_detection_agent.py
-|
-+-- config/
-|   +-- __init__.py
-|   +-- settings.py
-|
-+-- data/
-|   +-- transactions.csv
-|
-+-- outputs/
-|
-+-- tools/
-|   +-- __init__.py
-|   +-- aml_rules.py
-|
-+-- app.py
-+-- workflow.py
-+-- requirements.txt
-+-- README.md
-+-- .gitignore
+├── agents/
+│   ├── __init__.py
+│   └── aml_detection_agent.py
+│
+├── config/
+│   ├── __init__.py
+│   └── settings.py
+│
+├── data/
+│   └── transactions.csv
+│
+├── outputs/
+│
+├── tools/
+│   ├── __init__.py
+│   └── aml_rules.py
+│
+├── app.py
+├── workflow.py
+├── requirements.txt
+├── README.md
+└── .gitignore
 ```
 
 ## Components
