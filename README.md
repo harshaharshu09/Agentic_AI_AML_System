@@ -4,7 +4,7 @@ A Python and Streamlit project that demonstrates rule-based transaction monitori
 
 ## Live Demo
 
-**Streamlit Application:** Deployment pending. The public app link will be added here after deployment.
+**Streamlit App:** https://harshaharshu09-agentic-ai-aml-system-app-nwyqkk.streamlit.app/
 
 ## Overview
 
