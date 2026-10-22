@@ -1,6 +1,6 @@
 # Agentic AI Anti-Money Laundering (AML) System
 
-A Python and Streamlit project that demonstrates rule-based transaction monitoring, suspicious-pattern flagging, and risk categorisation for sample financial transactions.
+A Python and Streamlit learning project that demonstrates rule-based transaction monitoring, suspicious-pattern flagging, risk categorisation, interactive filtering, and CSV export for sample financial transactions.
 
 ## Live Demo
 
@@ -43,7 +43,10 @@ Sample Transaction Dataset (CSV)
 - Calculates a demonstration risk score
 - Categorises transactions as Low, Medium, or High risk
 - Displays transaction details and a separate high-risk transaction table
-- Shows summary metrics for total, suspicious, and high-risk transactions
+- Shows a Low / Medium / High risk-distribution chart
+- Filters transactions by search text, risk level, and country
+- Exports filtered or full screening results to CSV
+- Includes unit tests for core AML rules and risk scoring
 
 ## Technology Stack
 
@@ -74,6 +77,9 @@ Agentic_AI_AML_System/
 │   ├── __init__.py
 │   └── aml_rules.py
 │
+├── tests/
+│   └── test_aml_rules.py
+│
 ├── app.py
 ├── workflow.py
 ├── requirements.txt
@@ -91,6 +97,7 @@ Agentic_AI_AML_System/
 | `tools/aml_rules.py` | Contains rule checks, risk-score calculation, and risk-level assignment |
 | `config/settings.py` | Contains app settings and AML threshold values |
 | `data/transactions.csv` | Synthetic sample transaction dataset |
+| `tests/test_aml_rules.py` | Unit tests for the screening rules and risk scoring |
 | `requirements.txt` | Python package dependencies |
 
 ## Run Locally
@@ -128,6 +135,12 @@ python workflow.py
 python -m streamlit run app.py
 ```
 
+### 6. Run the tests
+
+```powershell
+python -m unittest discover -s tests -v
+```
+
 ## Understanding the Results
 
 The dashboard displays:
@@ -152,7 +165,7 @@ The sample dataset is synthetic. Results depend on the rules and thresholds impl
 
 - Add transaction filtering and search
 - Add risk-distribution charts and customer-level summaries
-- Add tests for individual AML rules and risk-score boundaries
+- Expand unit tests for additional transaction scenarios and risk-score boundaries
 - Improve time-window and customer-baseline analysis
 - Add a case-review queue and audit trail
 - Explore validated anomaly-detection methods and explainable alerts
